@@ -1,0 +1,1501 @@
+:root {
+  --color-bg-tecnico: #F4F4F4;
+  --color-azul-profundo: #004A70;
+  --color-verde-energetico: #7AB55C;
+  --color-gris-industrial: #5D6163;
+}
+/* Desplazamiento suave para toda la página */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px; /* Asegura que el navbar no tape el contenido del ancla */
+}
+/* Tipografía y colores base */
+body {
+  background-color: var(--color-bg-tecnico);
+  color: var(--color-gris-industrial);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  padding-top: 50px; /* Offset para el Navbar fixed */
+}
+
+/* Encabezados */
+h1, h2, h3, h4, h5, h6, .nav-link {
+  color: var(--color-azul-profundo) !important;
+}
+
+/* Botones Personalizados */
+.btn-primary-custom {
+  background-color: var(--color-verde-energetico);
+  color: #FFFFFF !important;
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+  background-color: #689e4e;
+  transform: translateY(-2px);
+}
+
+.btn-outline-custom {
+  border: 2px solid var(--color-azul-profundo);
+  color: var(--color-azul-profundo) !important;
+  background-color: transparent;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+  background-color: var(--color-azul-profundo);
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+}
+
+/* Estilos de la Hero Section con Video de Fondo */
+/* Hero Section Ajustado */
+.hero-section {
+  position: relative;
+  min-height: calc(100vh - 76px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-azul-profundo); /* Background fallback mientras carga el video */
+}
+/* Video Responsivo */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35); /* Capa de contraste sobre el video */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Card con efecto de cristal difuminado (Glassmorphism) */
+.glass-card {
+  background: rgba(244, 244, 244, 0.85); /* Blanco Técnico semitransparente */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 74, 112, 0.15);
+}
+/* Hero Section Ajustado */
+.hero-section {
+  position: relative;
+  min-height: calc(100vh - 76px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-azul-profundo); /* Background fallback mientras carga el video */
+}
+
+/* Video Responsivo */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ajuste fino para la imagen de los ingenieros recortados */
+.hero-ingenieros-img {
+  max-height: 520px;
+  width: auto;
+  filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.3)); /* Sombra suave para despegar del fondo */
+  transition: transform 0.4s ease;
+}
+
+.hero-ingenieros-img:hover {
+  transform: scale(1.02); /* Efecto interactivo discreto */
+}
+
+/* Card con Glassmorphism impecable */
+.glass-card {
+  background: rgba(244, 244, 244, 0.90); /* Blanco Técnico (#F4F4F4) con ligera opacidad */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+.hero-video {
+  /* Estilos anteriores... */
+  transition: opacity 0.5s ease-in-out;
+}
+/* Hero Section que ocupa el alto de pantalla visible */
+.hero-section {
+  position: relative;
+  height: calc(100vh - 76px); /* Ocupa exactamente el alto de pantalla disponible */
+  min-height: 600px; /* Previene deformaciones en pantallas pequeñas */
+  overflow: hidden;
+  display: flex;
+  background-color: var(--color-azul-profundo);
+}
+
+/* Contenedor principal que se expande verticalmente */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 0 !important; /* Asegura contacto con el borde inferior */
+}
+
+/* Ajuste para que la imagen toque el fondo y escale en pantallas grandes */
+.hero-ingenieros-img {
+  max-height: calc(100vh - 120px); /* Ajusta dinámicamente según el tamaño del monitor */
+  object-fit: contain;
+  object-position: bottom;
+  margin-bottom: 0;
+  display: block;
+  filter: drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.4));
+  transition: transform 0.3s ease;
+}
+
+/* Card difuminada con margen inferior estratégico */
+.glass-card {
+  background: rgba(244, 244, 244, 0.92); /* Blanco Técnico semitransparente */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1rem; /* Pequeño espacio estético respecto al borde de la pantalla */
+}
+/* Hero Section */
+.hero-section {
+  position: relative;
+  min-height: calc(100vh - 76px);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end; /* Mantiene todo pegado a la base */
+  background-color: var(--color-azul-profundo);
+  padding-bottom: 2rem; /* Espaciado con respecto al borde inferior */
+}
+
+/* Alineación de columnas en la base */
+.hero-row {
+  align-items: flex-end;
+}
+
+/* Imagen de Ingenieros Nivelada */
+.hero-ingenieros-img {
+  max-height: 70vh; /* Aumentamos el tamaño vertical para balancear la tarjeta */
+  width: auto;
+  object-fit: contain;
+  object-position: bottom;
+  filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.4));
+  margin-bottom: -2rem; /* Ajuste para pegar completamente al límite inferior */
+}
+
+/* Card difuminada nivelada */
+.glass-card {
+  background: rgba(244, 244, 244, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1rem; /* Margen inferior discreto */
+}
+/* Header & Navbar con Azul Profundo */
+.navbar-custom {
+  background-color: var(--color-azul-profundo) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Logotipo */
+.navbar-custom .navbar-brand {
+  color: var(--color-bg-tecnico) !important;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Enlaces de Navegación */
+.navbar-custom .nav-link {
+  color: var(--color-bg-tecnico) !important;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+  color: #FFFFFF !important;
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* Ícono del menú hamburguesa (Móvil) */
+.navbar-custom .navbar-toggler {
+  border-color: rgba(244, 244, 244, 0.4);
+}
+
+.navbar-custom .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28244, 244, 244, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/* ==========================================
+   ANIMACIONES DINÁMICAS (ENTRADA Y SALIDA)
+   ========================================== */
+
+/* Estados base de visibilidad y transición */
+.hero-ingenieros-img,
+.glass-card {
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, opacity;
+}
+
+/* --- Estado Inicial / Fuera de pantalla (Inverso) --- */
+/* Ingenieros ocultos a la izquierda */
+.hero-ingenieros-img.hero-hidden {
+  opacity: 0;
+  transform: translateX(-120px);
+}
+
+/* Tarjeta oculto a la derecha */
+.glass-card.hero-hidden {
+  opacity: 0;
+  transform: translateX(120px);
+}
+
+/* --- Estado Visibles (Entrada) --- */
+.hero-ingenieros-img.hero-visible,
+.glass-card.hero-visible {
+  opacity: 0.8;
+  transform: translateX(0);
+}
+
+/* Evitar desbordamiento horizontal durante las animaciones */
+.hero-section {
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   SECCIÓN: PROPUESTA DE VALOR
+   ========================================== */
+
+.propuesta-section {
+  background-color: var(--color-bg-tecnico);
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tarjeta de Propuesta */
+.card-propuesta {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 74, 112, 0.08);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  height: 100%;
+}
+
+.card-propuesta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 74, 112, 0.12);
+}
+
+/* Íconos en Gris Industrial (#5D6163) */
+.icon-box-propuesta {
+  width: 64px;
+  height: 64px;
+  background-color: #EBEBEB;
+  color: var(--color-gris-industrial);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-propuesta:hover .icon-box-propuesta {
+  background-color: var(--color-azul-profundo);
+  color: #FFFFFF;
+}
+
+/* Animaciones Dinámicas de Entrada y Salida (Columnas) */
+.propuesta-col {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, opacity;
+}
+
+.propuesta-col.propuesta-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.propuesta-col.propuesta-hidden {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+/* Tarjeta de Propuesta */
+.card-propuesta {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+  height: 100%;
+  position: relative;
+  overflow: hidden; /* Mantiene la línea dentro de los bordes redondeados */
+}
+
+/* Línea Superior Verde Energético (#7AB55C) */
+.card-propuesta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px; /* Grosor de la línea */
+  background-color: var(--color-verde-energetico);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Efecto Hover: Activa la línea superior y eleva la tarjeta */
+.card-propuesta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.card-propuesta:hover::before {
+  opacity: 1; /* Muestra la línea verde en el borde superior */
+}
+
+/* Contenedor del Ícono (Gris Industrial) */
+.icon-box-propuesta {
+  width: 56px;
+  height: 56px;
+  background-color: #F4F4F4; /* Fondo Blanco Técnico */
+  color: var(--color-gris-industrial) !important;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+/* Contenedor del ícono en reposo */
+.icon-box-propuesta {
+  width: 56px;
+  height: 56px;
+  background-color: #F4F4F4; /* Blanco Técnico */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Ícono en reposo (Gris Industrial) */
+.icon-box-propuesta i {
+  color: var(--color-gris-industrial);
+  transition: color 0.3s ease;
+}
+
+/* Hover: Fondo Azul Profundo e Ícono Blanco */
+.card-propuesta:hover .icon-box-propuesta {
+  background-color: var(--color-azul-profundo);
+}
+
+.card-propuesta:hover .icon-box-propuesta i {
+  color: #FFFFFF !important; /* Forzamos el color blanco en la etiqueta i */
+}
+
+/* ==========================================
+   SECCIÓN: INSTITUCIONAL (QUIÉNES SOMOS)
+   ========================================== */
+
+.quienes-somos-section {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+  background-color: var(--color-azul-profundo);
+}
+
+/* Video de fondo para Quiénes Somos */
+.quienes-somos-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+.quienes-somos-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Tarjeta Glassmorphism para contenido institucional */
+.glass-panel-light {
+  background: rgba(244, 244, 244, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Marco estético de la imagen principal */
+.img-quienes-somos-wrapper {
+  position: relative;
+  border-radius: 24px;
+  border: 3px solid var(--color-verde-energetico);
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Contenedor de Íconos (Misión, Visión, Valores) */
+.badge-icon-box {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  background-color: var(--color-verde-energetico);
+  color: #FFFFFF;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 12px rgba(122, 181, 92, 0.3);
+}
+
+/* Animaciones de Entrada y Salida */
+.qs-animate-left,
+.qs-animate-right {
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, opacity;
+}
+
+.qs-hidden-left {
+  opacity: 0;
+  transform: translateX(-80px);
+}
+
+.qs-hidden-right {
+  opacity: 0;
+  transform: translateX(80px);
+}
+
+.qs-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ==========================================
+   SECCIÓN: SERVICIOS ESPECIALIZADOS
+   ========================================== */
+
+.servicios-section {
+  background-color: var(--color-gris-industrial, #5D6163); /* Fondo Gris Industrial */
+  padding: 6rem 0;
+  position: relative;
+}
+
+/* Encabezado sobre fondo oscuro */
+.servicios-section .titulo-seccion {
+  color: #FFFFFF !important; /* Blanco para alto contraste y legibilidad */
+}
+
+.servicios-section .subtitulo-seccion {
+  color: #E2E8F0 !important; /* Blanco suave/Gris claro legible */
+}
+
+/* Tarjeta de Servicio */
+.card-servicio {
+  background: #FFFFFF;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Textos dentro de la tarjeta blanca */
+.card-servicio .servicio-titulo {
+  color: var(--color-azul-profundo, #004A70);
+  font-weight: 700;
+  font-size: 1.35rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.card-servicio .servicio-descripcion {
+  color: #4A5568; /* Gris oscuro para lectura óptima dentro del cuadro blanco */
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Badge del número */
+.servicio-badge {
+  width: 48px;
+  height: 48px;
+  background-color: #F1F5F9;
+  color: var(--color-azul-profundo, #004A70);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.35s ease;
+}
+
+/* HOVER: Borde en Verde Energético (#7AB55C) */
+.card-servicio:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-verde-energetico, #7AB55C) !important;
+  box-shadow: 0 15px 35px rgba(122, 181, 92, 0.3);
+}
+
+.card-servicio:hover .servicio-badge {
+  background-color: var(--color-verde-energetico, #7AB55C);
+  color: #FFFFFF;
+}
+
+.servicio-link {
+  color: var(--color-azul-profundo, #004A70);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.card-servicio:hover .servicio-link {
+  color: var(--color-verde-energetico, #7AB55C);
+}
+
+
+/* ==========================================
+   SECCIÓN: SERVICIOS ESPECÍFICOS
+   ========================================== */
+
+.services-section {
+  background-color: var(--color-bg-tecnico, #F4F4F4);
+  padding: 6rem 0;
+}
+
+.services-section .section-title {
+  color: var(--color-azul-profundo, #004A70);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+/* Grid Layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Tarjeta de Servicio */
+.service-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Línea Verde Energético en Hover */
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-verde-energetico, #7AB55C);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(122, 181, 92, 0.4);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+/* Header & Badges */
+.card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.card-header h3 {
+  color: var(--color-azul-profundo, #004A70);
+  font-weight: 700;
+  font-size: 1.35rem;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge {
+  background-color: var(--color-azul-profundo, #004A70);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35em 0.75em;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+.card-desc {
+  color: var(--color-gris-industrial, #5D6163);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilo para los detalles desplegables (<details>) */
+.service-card details {
+  margin-top: auto;
+  border-top: 1px solid #E2E8F0;
+  padding-top: 1rem;
+}
+
+.service-card summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-azul-profundo, #004A70);
+  font-size: 0.9rem;
+  user-select: none;
+  transition: color 0.2s ease;
+  list-style: none; /* Remueve flecha por defecto */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.service-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.service-card summary::after {
+  content: "➔";
+  color: var(--color-verde-energetico, #7AB55C);
+  transition: transform 0.3s ease;
+  font-size: 0.85rem;
+}
+
+.service-card details[open] summary::after {
+  transform: rotate(90deg);
+}
+
+.service-card summary:hover {
+  color: var(--color-verde-energetico, #7AB55C);
+}
+
+.details-content {
+  padding-top: 1rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.details-content h4 {
+  color: var(--color-azul-profundo, #004A70);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.details-content ul {
+  padding-left: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.details-content li {
+  color: var(--color-gris-industrial, #5D6163);
+  font-size: 0.88rem;
+  margin-bottom: 0.35rem;
+}
+
+/* Banner de Calidad */
+.quality-banner {
+  background: var(--color-azul-profundo, #004A70);
+  border-left: 5px solid var(--color-verde-energetico, #7AB55C);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 74, 112, 0.15);
+}
+
+.quality-banner p {
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.quality-banner strong {
+  color: var(--color-verde-energetico, #7AB55C);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ==========================================
+   ANIMACIONES: SERVICIOS ESPECIALIZADOS
+   ========================================== */
+
+/* Transición suave para las columnas */
+.servicio-col {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, opacity;
+}
+
+/* Estado Visibilidad (Entrada) */
+.servicio-col.servicio-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estado Oculto (Salida Inversa) */
+.servicio-col.servicio-hidden {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+/* ==========================================
+   ANIMACIONES: SERVICIOS ESPECÍFICOS
+   ========================================== */
+
+/* Estados base para las tarjetas y el banner */
+.services-section .service-card,
+.services-section .quality-banner {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, opacity;
+}
+
+/* Estado Visibles (Entrada) */
+.services-section .service-card.spec-visible,
+.services-section .quality-banner.spec-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estado Oculto (Salida Inversa) */
+.services-section .service-card.spec-hidden,
+.services-section .quality-banner.spec-hidden {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+/* ==========================================
+   SECCIÓN: TRANSICIÓN ECOLÓGICA
+   ========================================== */
+
+.transicion-ecologica-section {
+  background-color: var(--color-verde-energetico, #7AB55C);
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Texto en Blanco */
+.transicion-ecologica-section h2 {
+  color: #FFFFFF !important;
+  font-size: 2.25rem;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+
+/* Botón Azul Profundo (#004A70) */
+.btn-azul-profundo {
+  background-color: var(--color-azul-profundo, #004A70);
+  color: #FFFFFF !important;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 0.9rem 2.2rem;
+  border: 2px solid transparent;
+  transition: all 0.35s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-azul-profundo:hover {
+  background-color: #003653; /* Tono azul ligeramente más oscuro */
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+  color: #FFFFFF !important;
+}
+
+/* Animación de Escalado (Entrada / Salida) */
+.eco-animate {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, opacity;
+}
+
+.eco-animate.eco-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.eco-animate.eco-hidden {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+}
+
+/* ==========================================
+   SECCIÓN DE CONTACTO
+   ========================================== */
+
+.contacto-section {
+  background-color: #F8F9FA;
+  padding: 5rem 0;
+}
+
+/* Tarjetas de Información */
+.contacto-info-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.contacto-icon-box {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 74, 112, 0.1);
+  color: var(--color-azul-profundo, #004A70);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-right: 1rem;
+}
+
+/* Formulario */
+.contacto-form-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--color-azul-profundo, #004A70);
+  box-shadow: 0 0 0 0.25rem rgba(0, 74, 112, 0.15);
+}
+
+/* Animations: Entrada y Salida */
+.contacto-anim-left,
+.contacto-anim-right {
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, opacity;
+}
+
+.contacto-anim-left {
+  transform: translateX(-50px);
+}
+
+.contacto-anim-right {
+  transform: translateX(50px);
+}
+
+/* Estado Visibles */
+.contacto-anim-left.contacto-visible,
+.contacto-anim-right.contacto-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Estado Ocultos */
+.contacto-anim-left.contacto-hidden {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.contacto-anim-right.contacto-hidden {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+/* ==========================================
+   FOOTER (PIE DE PÁGINA)
+   ========================================== */
+
+.footer-section {
+  background-color: var(--color-azul-profundo, #004A70);
+  color: #FFFFFF;
+  padding-top: 4.5rem;
+  padding-bottom: 2rem;
+  border-top: 4px solid var(--color-verde-energetico, #7AB55C);
+  position: relative;
+}
+
+.footer-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.footer-brand span {
+  color: var(--color-verde-energetico, #7AB55C);
+}
+
+.footer-title {
+  color: #F4F4F4 !important;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+/* Línea de acento bajo los títulos */
+.footer-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 35px;
+  height: 2px;
+  background-color: var(--color-verde-energetico, #7AB55C);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.65rem;
+}
+
+.footer-links a {
+  color: #D1D5DB;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: var(--color-verde-energetico, #7AB55C);
+  transform: translateX(4px);
+}
+
+/* Redes Sociales */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-right: 0.5rem;
+}
+
+.social-icon:hover {
+  background-color: var(--color-verde-energetico, #7AB55C);
+  color: #FFFFFF;
+  transform: translateY(-3px);
+}
+
+/* Sub-footer / Copyright */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #A0AEC0;
+}
+
+.footer-bottom a {
+  color: #A0AEC0;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer-bottom a:hover {
+  color: var(--color-verde-energetico, #7AB55C);
+}
+
+
+/* ==========================================
+   ESTILOS Y MODALES: SERVICIOS ESPECÍFICOS
+   ========================================== */
+
+/* Ajustes a las tarjetas (Sin acordeón) */
+.services-section .service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Botón para abrir el Modal */
+.btn-ver-mas {
+  background-color: transparent;
+  color: var(--color-azul-profundo, #004A70);
+  border: 2px solid var(--color-azul-profundo, #004A70);
+  border-radius: 50px;
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  margin-top: 1.25rem;
+}
+
+.btn-ver-mas:hover {
+  background-color: var(--color-azul-profundo, #004A70);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 74, 112, 0.2);
+}
+
+/* Modal personalizado */
+.modal-header-custom {
+  background-color: var(--color-azul-profundo, #004A70);
+  color: #FFFFFF;
+  border-bottom: 3px solid var(--color-verde-energetico, #7AB55C);
+}
+
+.modal-header-custom .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.modal-subtitle {
+  color: var(--color-azul-profundo, #004A70);
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-left: 4px solid var(--color-verde-energetico, #7AB55C);
+  padding-left: 0.75rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.modal-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.modal-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #4A5568;
+}
+
+.modal-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-verde-energetico, #7AB55C);
+  font-weight: bold;
+}
+
+/* ==========================================
+   NAVEGACIÓN - EFECTO HOVER SUBRAYADO
+   ========================================== */
+
+/* Aseguramos posicionamiento relativo en los enlaces del nav */
+#main-navbar .navbar-nav .nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Línea horizontal oculta por defecto (pseudo-elemento) */
+#main-navbar .navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #7AB55C;
+  border-radius: 2px;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Animación de la línea al hacer HOVER */
+#main-navbar .navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Estado ACTIVO cuando se hace scroll (Scrollspy de Bootstrap) */
+#main-navbar .navbar-nav .nav-link.active::after {
+  width: 100%;
+}
+
+#main-navbar .navbar-nav .nav-link:hover,
+#main-navbar .navbar-nav .nav-link.active {
+  color: #ffffff; /* Asegura un buen contraste de texto al pasar el cursor */
+}
+
+/* Dimensiones y color inicial del icono SVG */
+.servicio-svg-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--color-verde-energético, #7AB55C); /* Color por defecto */
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: block;
+}
+
+/* Cambio de color y ligera elevación en el hover de la tarjeta */
+.card-servicio:hover .servicio-svg-icon {
+  color: var(--color-azul-profundo, #004A70); /* Cambia al color principal al hacer hover */
+  transform: translateY(-2px);
+}
+
+/* Estado Base de la Tarjeta */
+.card-servicio {
+  background-color: #ffffff;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* Estado Hover de la Tarjeta */
+.card-servicio:hover {
+  border-color: #7AB55C; /* Borde verde */
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Contenedor del Icono (Badge) */
+.servicio-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background-color: #EBF4E8; /* Fondo verde muy claro por defecto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.card-servicio:hover .servicio-badge {
+  background-color: #7AB55C; /* Pasa a verde sólido */
+}
+
+/* Icono SVG */
+.servicio-svg-icon {
+  width: 32px;
+  height: 32px;
+  color: #7AB55C; /* Trazo verde */
+  transition: color 0.3s ease;
+}
+
+.card-servicio:hover .servicio-svg-icon {
+  color: #004A70; /* Cambia a azul para mayor contraste sobre el fondo verde */
+}
+
+/* Enlace Solicitar Información */
+.servicio-link {
+  color: #004A70;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.servicio-link span {
+  transition: transform 0.3s ease;
+}
+
+.card-servicio:hover .servicio-link {
+  color: #7AB55C;
+}
+
+.card-servicio:hover .servicio-link span {
+  transform: translateX(5px); /* Desplaza la flecha a la derecha */
+}
+
+/* Contenedor de botones */
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 24px;
+  flex-wrap: wrap; /* Adaptabilidad responsive */
+}
+
+/* Estilos base de los botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Botón Primario (Verde) */
+.btn-primary {
+  background-color: #7AB55C;
+  color: #FFFFFF;
+  border: 2px solid #7AB55C;
+  box-shadow: 0 4px 12px rgba(122, 181, 92, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: #699F4C;
+  border-color: #699F4C;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(122, 181, 92, 0.35);
+}
+
+.btn-primary:hover svg {
+  transform: translateX(3px);
+}
+
+.btn-primary svg {
+  transition: transform 0.25s ease;
+}
+
+/* Botón Delineado (Azul) */
+.btn-outline {
+  background-color: transparent;
+  color: #004A70;
+  border: 2px solid #004A70;
+}
+
+.btn-outline:hover {
+  background-color: #004A70;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 74, 112, 0.2);
+}
+
+/* Estado al presionar (Active) */
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+/* Asegura que el contenedor los ponga lado a lado */
+.hero-actions {
+  display: flex;
+  flex-direction: row; /* Fuerza la alineación horizontal */
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+/* Fuerza a ambos botones a tener exactamente la misma altura y padding */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-sizing: border-box;
+  height: 44px; /* Altura fija uniforme */
+}
+
+/* Opcional: Si quieres que ocupen exactamente el mismo ancho de extremo a extremo */
+.hero-actions .btn {
+  flex: 1; /* Hace que ambos botones midan exacto lo mismo de ancho */
+  text-align: center;
+}
+
+/* Estilos para el nuevo logotipo en el Navbar */
+.navbar-logo {
+  height: 60px;          /* Ajusta la altura deseada */
+  width: auto;           /* Mantiene la proporción del PNG */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover opcional para interacción */
+.navbar-brand:hover .navbar-logo {
+  transform: scale(1.03);
+}
+
+/* Estilos para el logotipo en el Footer */
+.footer-logo {
+  height: 35px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Si tu navbar no tiene fondo oscuro por defecto, asegúrate de añadir un fondo que contraste con la tipografía blanca */
+.navbar-custom {
+  background-color: #1a1a1a; /* O mantén tu color oscuro corporativo */
+}
+
+#main-navbar .navbar-nav .nav-link {
+    font-size: 1.2em; 
+}
+
+/* Estado en reposo (Azul #004A70 con ícono en blanco) */
+.value-card .icon-box {
+  width: 56px;
+  height: 56px;
+  background-color: #004A70;
+  color: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Estado Hover (Cambio a verde #7AB55C al pasar el cursor sobre la tarjeta o el ícono) */
+.value-card:hover .icon-box {
+  background-color: #7AB55C;
+  color: #ffffff;
+  transform: translateY(-2px); /* Un ligero realce opcional */
+}
+
+/* Configuración base de la tarjeta */
+.value-card {
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid transparent !important; /* Borde superior transparente por defecto */
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estado Hover de la tarjeta completa */
+.value-card:hover {
+  border-top-color: #7AB55C !important; /* Borde verde en la parte superior */
+  transform: translateY(-4px);         /* Eleva ligeramente la tarjeta */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important; /* Suaviza la sombra al elevarse */
+}
+
+/* Aseguramos que la tarjeta maneje la posición de sus elementos hijos */
+.service-card {
+  position: relative;
+  overflow: hidden; /* Corta el SVG si sale de los bordes de la tarjeta */
+  z-index: 1;
+}
+
+/* Estilos para el SVG en el fondo */
+.card-bg-icon {
+  position: absolute;
+  top: -15px;         /* Lo sube un poco para alinearlo bien */
+  right: -20px;       /* Lo pega a la derecha */
+  width: 150px;       /* Tamaño grande para que impacte */
+  height: 150px;
+  opacity: 0.5;      /* Transparencia sutil (ajusta entre 0.05 y 0.12 a tu gusto) */
+  color: #004b75;     /* Color de tu marca */
+  pointer-events: none; /* Evita que interfiera con el clic o hover */
+  z-index: -1;        /* Se envía al fondo por detrás del texto */
+}
