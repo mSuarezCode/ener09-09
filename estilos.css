@@ -1283,8 +1283,8 @@ h1, h2, h3, h4, h5, h6, .nav-link {
 
 /* Icono SVG */
 .servicio-svg-icon {
-  width: 32px;
-  height: 32px;
+  width: 55px;
+  height: 55px;
   color: #7AB55C; /* Trazo verde */
   transition: color 0.3s ease;
 }
