@@ -1235,8 +1235,8 @@ h1, h2, h3, h4, h5, h6, .nav-link {
 
 /* Dimensiones y color inicial del icono SVG */
 .servicio-svg-icon {
-  width: 48px;
-  height: 48px;
+  width: 55px;
+  height: 55px;
   color: var(--color-verde-energético, #7AB55C); /* Color por defecto */
   transition: color 0.3s ease, transform 0.3s ease;
   display: block;
